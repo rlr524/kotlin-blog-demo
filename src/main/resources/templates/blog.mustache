@@ -1,8 +1,28 @@
+<style>
+    body {
+        font-family: Helvetica, sans-serif;
+    }
+    .article-header {
+        color: aqua;
+    }
+    .home-title {
+        color: red;
+    }
+</style>
+
 {{> header}}
 
-<h1>{{title}}</h1>
+<h1 class="home-title">{{title}}</h1>
 
 <div class="articles">
+    {{#banner.title}}
+        <section>
+            <header class="banner">
+                <h2 class="banner-title">{{banner.title}}</h2>
+            </header>
+            <div class="banner-content">{{banner.content}}</div>
+        </section>
+    {{/banner.title}}
     {{#articles}}
         <section>
             <header class="article-header">
