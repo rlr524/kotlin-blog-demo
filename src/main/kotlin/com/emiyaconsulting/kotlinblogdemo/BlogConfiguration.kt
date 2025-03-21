@@ -2,11 +2,13 @@ package com.emiyaconsulting.kotlinblogdemo
 
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 
+@Configuration
 class BlogConfiguration {
     @Bean
     fun databaseInitializer(userRepository: UserRepository, articleRepository: ArticleRepository) = ApplicationRunner {
-        val johnDoe = userRepository.save(User("johnDoe", "John", "Doe"))
+        val johnDoe = userRepository.save(BlogUser("johnDoe", "John", "Doe"))
         articleRepository.save(Article(
             title = "Lorem",
             headline = "Lorem",

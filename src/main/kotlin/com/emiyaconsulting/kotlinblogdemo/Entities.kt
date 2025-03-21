@@ -20,14 +20,14 @@ class Article (
     var title: String,
     var headline: String,
     var content: String,
-    @ManyToOne var author: User,
+    @ManyToOne var author: BlogUser,
     var slug: String = title.toSlug(),
     var addedAt: LocalDateTime = LocalDateTime.now(),
     @Id @GeneratedValue var id: Long? = null
 )
 
 @Entity
-class User (
+class BlogUser (
     var login: String,
     var firstName: String,
     var lastName: String,

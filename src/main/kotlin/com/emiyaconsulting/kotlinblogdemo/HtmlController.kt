@@ -42,7 +42,7 @@ class HtmlController(private val repository: ArticleRepository) {
         val title: String,
         val headline: String,
         val content: String,
-        val author: User,
+        val author: BlogUser,
         val addedAt: String
     )
 }
